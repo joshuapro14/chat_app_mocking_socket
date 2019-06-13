@@ -30,7 +30,7 @@ export default class Footer extends Component {
     return(
       <div>
       {this.props.from}
-          <div className="inputBox">
+          <div className="inputBox ">
             <input className="mytext" placeholder="Type a message" value={this.state.value}
               onKeyDown={this.onKeyDown} onChange={this.readInput}
             />

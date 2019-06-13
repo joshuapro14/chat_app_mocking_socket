@@ -13,10 +13,13 @@
 }
 
 .inputBox {
-  width: 75%;
+  width: 95%;
   background-color: white;
   border: 2px solid green;
   border-radius: 0.2em;
+}
+.mytext {
+  width: 98%;
 }
 
 .mytext:focus {

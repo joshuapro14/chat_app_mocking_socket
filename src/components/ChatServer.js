@@ -11,7 +11,7 @@ export default class ChatServer{
   initListners = () => {
     this.mockServer.on('connection', socket => {
       this.sockets.push(socket);
-      socket.on('message', data => {
+      socket.on('message', data => {        
         this.onReceiptCallBack(data.message,data.from,data.time);
       });
     });
@@ -22,7 +22,7 @@ export default class ChatServer{
   sendMessage = (message,from,time) => {
     var msg = getMessageObject(message,from,time);
     this.sockets.map(socket => {
-      socket.send('message',msg);
+      socket.send(JSON.stringify(msg));
     });
   }
 }

@@ -5,17 +5,25 @@ export default class MessageList extends Component {
     super(props);
   }
 
+  getRandomNumber = () => {
+    function s4() {
+      return Math.floor((1 + Math.random()) * 0x10000)
+        .toString(16)
+        .substring(1);
+    }
+    return new Date().getTime()+"-"+s4()+s4()+"-"+s4();
+  }
+
   render(){
     return(
       <div>
       <ul>
       {
         this.props.messages.map(msg => {
-          console.log(JSON.stringify(msg));
           return (
-            <li key={new Date()+msg}>
+            <li key={this.getRandomNumber()}>
               <div className="from">
-                {this.props.from}
+                {msg.from}
               </div>
               <div className="message">
                 {msg.message}
