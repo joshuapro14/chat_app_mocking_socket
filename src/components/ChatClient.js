@@ -8,9 +8,19 @@ export default class ChatClient{
   }
 
   initListners = () => {
-    this.mockConnection.on('message', data => {
+    this.mockConnection.onmessage = (event) => {
+      //this.messages.push(event.data);
+      var data = event.data;
+      console.log("Received message @ client");
+      console.log("data "+data);
+      console.log("event "+JSON.stringify(event));
+      //console.log("from "+from);
       this.onReceiptCallBack(data.message,data.from,data.time);
-    }
+    };
+
+    /*this.mockConnection.on('message', data => {
+      this.onReceiptCallBack(data.message,data.from,data.time);
+    });*/
   }
 
   onReceiptCallBack = () => {}

@@ -11,11 +11,18 @@ export default class MessageList extends Component {
       <ul>
       {
         this.props.messages.map(msg => {
+          console.log(JSON.stringify(msg));
           return (
-            <li>from : {this.prosp.from}</li>
-            <li>{msg}</li>
+            <li key={new Date()+msg}>
+              <div className="from">
+                {this.props.from}
+              </div>
+              <div className="message">
+                {msg.message}
+              </div>
+            </li>
           )
-        });
+        })
       }
       </ul>
       </div>

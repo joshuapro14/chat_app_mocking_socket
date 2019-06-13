@@ -29,10 +29,11 @@ export default class Footer extends Component {
   render(){
     return(
       <div>
+      {this.props.from}
           <div className="inputBox">
             <input className="mytext" placeholder="Type a message" value={this.state.value}
               onKeyDown={this.onKeyDown} onChange={this.readInput}
-              disabled={inputDisabled}/>
+            />
           </div>
           <div style={{padding:10+'px', marginRight:'5%'}}>
             <button onClick={this.sendMessage}>Send</button>

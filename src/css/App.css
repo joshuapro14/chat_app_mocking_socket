@@ -1,14 +1,14 @@
 .mainContainer{
   widht: 100%;
-  padding: 0.5em;
+  padding: 0.1em;
   background-color: grey;
 }
 
 .chatContainer {
-  width: 50%;
+  width: 48%;
   display: inline-block;
   border: 2px solid black;
-  margin: 1em;
+
   background-color: white;
 }
 

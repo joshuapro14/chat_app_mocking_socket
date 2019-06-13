@@ -7,11 +7,13 @@ import ChatServer from './components/ChatServer.js';
 import ChatClient from './components/ChatClient.js';
 
 const fakeURL = 'ws://localhost:8080';
-const store = createStore(redFn, newInitState);
+const store = createStore(redFn, initialState);
+
 const chatServer = new ChatServer(fakeURL);
 const chatClient = new ChatClient(fakeURL);
 
 const onReceiptCallBack = (message,from,time) => {
+  console.log(time );
   store.dispatch({
     type: 'MESSAGE_RECEIVED', message: message,
     from: from, time: time
@@ -22,7 +24,7 @@ chatServer.onReceiptCallBack = onReceiptCallBack;
 chatClient.onReceiptCallBack = onReceiptCallBack;
 
 const handleOutgoing = (message,from) => {
-  let sendTo = from == "server" ? chatClient : chatServer;
+  let sendTo = from == "server" ? chatServer : chatClient ;
   sendTo.sendMessage(message,from,new Date().getTime());
 }
 

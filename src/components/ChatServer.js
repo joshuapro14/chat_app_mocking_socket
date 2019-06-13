@@ -14,7 +14,7 @@ export default class ChatServer{
       socket.on('message', data => {
         this.onReceiptCallBack(data.message,data.from,data.time);
       });
-    }
+    });
   }
 
   onReceiptCallBack = () => {}
