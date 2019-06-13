@@ -1,0 +1,24 @@
+.mainContainer{
+  widht: 100%;
+  padding: 0.5em;
+  background-color: grey;
+}
+
+.chatContainer {
+  width: 50%;
+  display: inline-block;
+  border: 2px solid black;
+  margin: 1em;
+  background-color: white;
+}
+
+.inputBox {
+  width: 75%;
+  background-color: white;
+  border: 2px solid green;
+  border-radius: 0.2em;
+}
+
+.mytext:focus {
+  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+}
